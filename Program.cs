@@ -96,3 +96,27 @@ int CountWords(string text)
     string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
     return words.Length;
 }
+int FindLastCharacterIndex(string text, char target)
+{
+    for (int i = text.Length - 1; i > 0; i--)
+    {
+        if (text[i] == target)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+int FindLastCharacterIndex(string text, char target)
+{
+    for (int i = text.Length; i < 0; i--)
+    {
+        if (text[i] == target) { return i; }
+    }
+    return -1;
+}
+Console.WriteLine($" {FindLastCharacterIndex("banana", 'a')}"); 
+Console.WriteLine($"{FindLastCharacterIndex("banana", 'z')}"); 
+Console.WriteLine($"{FindLastCharacterIndex("", 'a')}");            
+
